@@ -12,6 +12,7 @@
 		1996BDA72193D74E00F50E0C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1996BDA52193D74E00F50E0C /* Main.storyboard */; };
 		1996BDA92193D74F00F50E0C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1996BDA82193D74F00F50E0C /* Assets.xcassets */; };
 		1996BDAC2193D74F00F50E0C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1996BDAA2193D74F00F50E0C /* LaunchScreen.storyboard */; };
+		1996BDB52193D9FC00F50E0C /* AlgorithmMaster.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1996BDB42193D9FC00F50E0C /* AlgorithmMaster.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		1996BDA82193D74F00F50E0C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1996BDAB2193D74F00F50E0C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1996BDAD2193D74F00F50E0C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1996BDB42193D9FC00F50E0C /* AlgorithmMaster.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlgorithmMaster.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +58,7 @@
 			children = (
 				1996BDA12193D74E00F50E0C /* AppDelegate.swift */,
 				1996BDA32193D74E00F50E0C /* ViewController.swift */,
+				1996BDB42193D9FC00F50E0C /* AlgorithmMaster.swift */,
 				1996BDA52193D74E00F50E0C /* Main.storyboard */,
 				1996BDA82193D74F00F50E0C /* Assets.xcassets */,
 				1996BDAA2193D74F00F50E0C /* LaunchScreen.storyboard */,
@@ -137,6 +140,7 @@
 			files = (
 				1996BDA42193D74E00F50E0C /* ViewController.swift in Sources */,
 				1996BDA22193D74E00F50E0C /* AppDelegate.swift in Sources */,
+				1996BDB52193D9FC00F50E0C /* AlgorithmMaster.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

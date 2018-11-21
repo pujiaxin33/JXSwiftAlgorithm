@@ -51,4 +51,51 @@ class SortMaster {
         }
         print(numbers)
     }
+
+
+    /// 快速排序
+    /// 找到一个基准值，小于基准值放在左边，大于则放到右边。接着递归排序拆分开的两个数组
+    /// 时间复杂度：最坏，每次的基准值都是当前最大数，O(n^2)。最好，已经排序好了，且基准值每次都是中间，O(nlogn)
+    static func quickSort() {
+        var numbers = [3, 5, 1, 0, 9, 7, 8, 6, 4, 2]
+        quickSort(numbers: &numbers, start: 0, end: numbers.count - 1)
+        print(numbers)
+    }
+
+    static func quickSort( numbers: inout [Int], start: Int, end: Int) {
+        if start >= end {
+            return
+        }
+        let baseNumber = numbers[start]
+        var i = start
+        var j = end
+        while i < j {
+            //找到右边第一个比基准值小的数，找到就交换
+            while i < j && numbers[j] > baseNumber {
+                j -= 1
+            }
+            if i < j {
+                numbers.swapAt(i, j)
+                i += 1
+            }
+            //找到左边第一个比基准值大的数，找到就交换
+            while i < j && numbers[i] < baseNumber {
+                i += 1
+            }
+            if i < j {
+                numbers.swapAt(i, j)
+                j -= 1
+            }
+        }
+        quickSort(numbers: &numbers, start: start, end: i - 1)
+        quickSort(numbers: &numbers, start: i + 1, end: end)
+    }
+
+
+
+
+
+
+
+
 }

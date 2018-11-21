@@ -11,6 +11,7 @@ import UIKit
 enum AlgorithmType {
     case twoDimensionArrayFind
     case maopaoSort
+    case chooseSort
 }
 
 struct AlgorithmCellModel {
@@ -24,8 +25,11 @@ class ViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        dataSource = [AlgorithmCellModel(name: "冒泡排序", type: .maopaoSort),
-        AlgorithmCellModel(name: "二维数组查找", type: .twoDimensionArrayFind),]
+        dataSource = [
+            AlgorithmCellModel(name: "选择排序", type: .chooseSort),
+            AlgorithmCellModel(name: "冒泡排序", type: .maopaoSort),
+            AlgorithmCellModel(name: "二维数组查找", type: .twoDimensionArrayFind),
+        ]
 
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
     }
@@ -51,6 +55,8 @@ extension ViewController {
             AlgorithmMaster.testTwoDimensionArrayFind()
         case .maopaoSort:
             SortMaster.maopaoSort()
+        case .chooseSort:
+            SortMaster.chooseSort()
         }
     }
 }

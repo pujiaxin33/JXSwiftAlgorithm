@@ -13,6 +13,7 @@ enum AlgorithmType {
     case maopaoSort
     case chooseSort
     case quickSort
+    case binarySearch
 }
 
 struct AlgorithmCellModel {
@@ -27,6 +28,7 @@ class ViewController: UITableViewController {
         super.viewDidLoad()
 
         dataSource = [
+            AlgorithmCellModel(name: "二分查找", type: .binarySearch),
             AlgorithmCellModel(name: "快速排序", type: .quickSort),
             AlgorithmCellModel(name: "选择排序", type: .chooseSort),
             AlgorithmCellModel(name: "冒泡排序", type: .maopaoSort),
@@ -52,7 +54,13 @@ extension ViewController {
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let cellModel = dataSource[indexPath.row]
+        let sortedNumbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+//        let numbers = [3, 5, 1, 0, 9, 7, 8, 6, 4, 2]
         switch cellModel.type! {
+        case .binarySearch:
+//            let index = AlgorithmMaster.binarySearchRecursive(values: sortedNumbers, target: 9, range: 0..<sortedNumbers.count)
+            let index = AlgorithmMaster.binarySearchIterative(values: sortedNumbers, target: 9)
+            print(index ?? -1)
         case .twoDimensionArrayFind:
             AlgorithmMaster.testTwoDimensionArrayFind()
         case .maopaoSort:

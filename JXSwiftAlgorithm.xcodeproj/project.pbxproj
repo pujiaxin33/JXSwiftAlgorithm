@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		19753CCB2232004D00648414 /* SortViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19753CCA2232004D00648414 /* SortViewController.swift */; };
+		19753CCD2232005900648414 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19753CCC2232005900648414 /* SearchViewController.swift */; };
+		19753CD02232025E00648414 /* JXSwiftAlgorithmDefines.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19753CCF2232025E00648414 /* JXSwiftAlgorithmDefines.swift */; };
+		19753CD22232067F00648414 /* BaseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19753CD12232067F00648414 /* BaseTableViewController.swift */; };
+		19753CD42232096600648414 /* SearchMaster.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19753CD32232096600648414 /* SearchMaster.swift */; };
+		19753CD6223209D500648414 /* TopicViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19753CD5223209D500648414 /* TopicViewController.swift */; };
+		19753CD8223209E600648414 /* TopicMaster.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19753CD7223209E600648414 /* TopicMaster.swift */; };
 		1996BDA22193D74E00F50E0C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1996BDA12193D74E00F50E0C /* AppDelegate.swift */; };
 		1996BDA42193D74E00F50E0C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1996BDA32193D74E00F50E0C /* ViewController.swift */; };
 		1996BDA72193D74E00F50E0C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1996BDA52193D74E00F50E0C /* Main.storyboard */; };
@@ -17,6 +24,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		19753CCA2232004D00648414 /* SortViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SortViewController.swift; sourceTree = "<group>"; };
+		19753CCC2232005900648414 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		19753CCF2232025E00648414 /* JXSwiftAlgorithmDefines.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JXSwiftAlgorithmDefines.swift; sourceTree = "<group>"; };
+		19753CD12232067F00648414 /* BaseTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableViewController.swift; sourceTree = "<group>"; };
+		19753CD32232096600648414 /* SearchMaster.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchMaster.swift; sourceTree = "<group>"; };
+		19753CD5223209D500648414 /* TopicViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopicViewController.swift; sourceTree = "<group>"; };
+		19753CD7223209E600648414 /* TopicMaster.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopicMaster.swift; sourceTree = "<group>"; };
 		1996BD9E2193D74E00F50E0C /* JXSwiftAlgorithm.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JXSwiftAlgorithm.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1996BDA12193D74E00F50E0C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1996BDA32193D74E00F50E0C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -39,6 +53,37 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		19753CC82231FF2300648414 /* Master */ = {
+			isa = PBXGroup;
+			children = (
+				1996BDB42193D9FC00F50E0C /* AlgorithmMaster.swift */,
+				19BA2FD521A3FB2D00170A41 /* SortMaster.swift */,
+				19753CD32232096600648414 /* SearchMaster.swift */,
+				19753CD7223209E600648414 /* TopicMaster.swift */,
+			);
+			path = Master;
+			sourceTree = "<group>";
+		};
+		19753CC92231FF2F00648414 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				1996BDA32193D74E00F50E0C /* ViewController.swift */,
+				19753CD12232067F00648414 /* BaseTableViewController.swift */,
+				19753CCA2232004D00648414 /* SortViewController.swift */,
+				19753CCC2232005900648414 /* SearchViewController.swift */,
+				19753CD5223209D500648414 /* TopicViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		19753CCE2232024500648414 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				19753CCF2232025E00648414 /* JXSwiftAlgorithmDefines.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
 		1996BD952193D74E00F50E0C = {
 			isa = PBXGroup;
 			children = (
@@ -58,10 +103,10 @@
 		1996BDA02193D74E00F50E0C /* JXSwiftAlgorithm */ = {
 			isa = PBXGroup;
 			children = (
+				19753CCE2232024500648414 /* Common */,
+				19753CC92231FF2F00648414 /* ViewController */,
+				19753CC82231FF2300648414 /* Master */,
 				1996BDA12193D74E00F50E0C /* AppDelegate.swift */,
-				1996BDA32193D74E00F50E0C /* ViewController.swift */,
-				1996BDB42193D9FC00F50E0C /* AlgorithmMaster.swift */,
-				19BA2FD521A3FB2D00170A41 /* SortMaster.swift */,
 				1996BDA52193D74E00F50E0C /* Main.storyboard */,
 				1996BDA82193D74F00F50E0C /* Assets.xcassets */,
 				1996BDAA2193D74F00F50E0C /* LaunchScreen.storyboard */,
@@ -141,10 +186,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				19753CCD2232005900648414 /* SearchViewController.swift in Sources */,
+				19753CCB2232004D00648414 /* SortViewController.swift in Sources */,
+				19753CD22232067F00648414 /* BaseTableViewController.swift in Sources */,
 				1996BDA42193D74E00F50E0C /* ViewController.swift in Sources */,
+				19753CD42232096600648414 /* SearchMaster.swift in Sources */,
+				19753CD8223209E600648414 /* TopicMaster.swift in Sources */,
 				1996BDA22193D74E00F50E0C /* AppDelegate.swift in Sources */,
 				1996BDB52193D9FC00F50E0C /* AlgorithmMaster.swift in Sources */,
 				19BA2FD621A3FB2D00170A41 /* SortMaster.swift in Sources */,
+				19753CD6223209D500648414 /* TopicViewController.swift in Sources */,
+				19753CD02232025E00648414 /* JXSwiftAlgorithmDefines.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

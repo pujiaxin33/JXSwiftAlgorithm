@@ -80,8 +80,41 @@ class SortMaster {
     }
 
 
+    /// 插入排序
+    /// 依次获取未排序好的数组的元素，然后从后往前扫描排序好的数组，并与之对比，将新元素插入到合适的位置
+    /// 时间复杂度：最好O(n)，最坏O(n^2)
+    static func insert() {
+        var numbers = [3, 5, 1, 0, 9, 7, 8, 6, 4, 2]
+        _insert(numbers: &numbers)
+        print(numbers)
+    }
+
+    private static func _insert(numbers: inout [Int]) {
+        guard numbers.count > 1 else {
+            return
+        }
+        for currentIndex in 1..<numbers.count {
+            //n-1
+            var compareIndex = currentIndex
+            //像这种index需要从后往前遍历的，就用while循环
+            while compareIndex >= 1 {
+                //0-currentIndex
+                if numbers[compareIndex] < numbers[compareIndex - 1] {
+                    numbers.swapAt(compareIndex, compareIndex - 1)
+                }
+                compareIndex -= 1
+            }
+//            repeat {
+//                if numbers[compareIndex] < numbers[compareIndex - 1] {
+//                    numbers.swapAt(compareIndex, compareIndex - 1)
+//                }
+//                compareIndex -= 1
+//            }while compareIndex >= 1
+        }
+    }
+
     /// 学术名：快速排序
-    /// 简介：找到一个基准值，小于基准值放在左边，大于则放到右边。接着递归排序拆分开的两个数组
+    /// 简介：主要运用了分治思想，把问题规模缩小，再分开解决。找到一个基准值，小于基准值放在左边，大于则放到右边。接着递归排序拆分开的两个数组
     /// 复杂度：时间复杂度：最坏，每次的基准值都是当前最大数，O(n^2)。最好，已经排序好了，且基准值每次都是中间，O(nlogn)
     static func quick() {
         var numbers = [3, 5, 1, 0, 9, 7, 8, 6, 4, 2]

@@ -18,7 +18,8 @@ struct AlgorithmCellModel<T: AlgorithmType> {
 
 enum AlgorithmSortType: AlgorithmType {
     case maopao                 //冒泡
-    case selection                 //选择
+    case selection              //选择
+    case insert                 //插入
     case quick                  //快速
 }
 

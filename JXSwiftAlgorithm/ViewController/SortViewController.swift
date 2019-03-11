@@ -17,6 +17,7 @@ class SortViewController: BaseTableViewController {
         dataSource = [
             AlgorithmCellModel(name: "冒泡排序", type: .maopao),
             AlgorithmCellModel(name: "选择排序", type: .selection),
+            AlgorithmCellModel(name: "插入排序", type: .insert),
             AlgorithmCellModel(name: "快速排序", type: .quick),
         ]
     }
@@ -36,6 +37,8 @@ class SortViewController: BaseTableViewController {
             SortMaster.bubble()
         case .selection:
             SortMaster.selection()
+        case .insert:
+            SortMaster.insert()
         case .quick:
             SortMaster.quick()
         }

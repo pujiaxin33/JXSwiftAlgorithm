@@ -101,6 +101,8 @@ class SortMaster {
                 //0-currentIndex
                 if numbers[compareIndex] < numbers[compareIndex - 1] {
                     numbers.swapAt(compareIndex, compareIndex - 1)
+                }else {
+                    break
                 }
                 compareIndex -= 1
             }
@@ -110,6 +112,40 @@ class SortMaster {
 //                }
 //                compareIndex -= 1
 //            }while compareIndex >= 1
+        }
+    }
+
+
+    /// 希尔排序(Shell Sort)
+    /// 又称为缩小增量排序，它是一种插入排序。它是直接插入排序算法的一种威力加强版。
+    static func shellInsert() {
+        var numbers = [3, 5, 1, 0, 9, 7, 8, 6, 4, 2]
+        _shellInsert(numbers: &numbers)
+        print(numbers)
+    }
+
+    static func _shellInsert(numbers: inout [Int]) {
+        //先获取增量因子
+        var stride = numbers.count/2
+        //Hibbard增量
+//        var stride = (numbers.count - 1)/2
+        while stride >= 1 {
+            //根据增量因子做插入排序
+            //分割成多个子序列，然后做插入排序
+            for startIndex in stride..<numbers.count {
+                var compareIndex = startIndex
+                while compareIndex >= stride {
+                    if numbers[compareIndex] < numbers[compareIndex - stride] {
+                        numbers.swapAt(compareIndex, compareIndex - stride)
+                    }else {
+                        break
+                    }
+                    compareIndex -= stride
+                }
+            }
+            stride = stride/2
+            //Hibbard增量
+//            stride = (stride - 1)/2
         }
     }
 

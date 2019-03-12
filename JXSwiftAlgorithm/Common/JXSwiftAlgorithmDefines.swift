@@ -20,6 +20,7 @@ enum AlgorithmSortType: AlgorithmType {
     case maopao                 //冒泡
     case selection              //选择
     case insert                 //插入
+    case shellInsert            //希尔排序
     case quick                  //快速
 }
 

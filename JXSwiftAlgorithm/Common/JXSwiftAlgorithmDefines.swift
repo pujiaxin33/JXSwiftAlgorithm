@@ -22,6 +22,7 @@ enum AlgorithmSortType: AlgorithmType {
     case insert                 //插入
     case shellInsert            //希尔排序
     case quick                  //快速
+    case merge                  //归并
 }
 
 enum AlgorithmSearchType: AlgorithmType {

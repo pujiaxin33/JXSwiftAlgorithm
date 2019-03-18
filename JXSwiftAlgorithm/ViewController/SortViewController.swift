@@ -20,6 +20,7 @@ class SortViewController: BaseTableViewController {
             AlgorithmCellModel(name: "插入排序", type: .insert),
             AlgorithmCellModel(name: "希尔排序", type: .shellInsert),
             AlgorithmCellModel(name: "快速排序", type: .quick),
+            AlgorithmCellModel(name: "归并排序", type: .merge),
         ]
     }
 
@@ -44,6 +45,8 @@ class SortViewController: BaseTableViewController {
             SortMaster.shellInsert()
         case .quick:
             SortMaster.quick()
+        case .merge:
+            SortMaster.merge()
         }
     }
 }

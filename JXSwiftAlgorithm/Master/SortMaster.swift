@@ -193,9 +193,53 @@ class SortMaster {
     }
 
 
+    /// 归并排序
+    /// 首先递归拆分数组，直至长度为1。然后依次合并数组为有顺数据，最终整个数组合并有序
+    /// 时间复杂度：O(nlogn)
+    static func merge() {
+        var numbers = [3, 5, 1, 0, 9, 7, 8, 6, 4, 2]
+        _merge(numbers: &numbers)
+        print(numbers)
+    }
 
+    static func _merge(numbers: inout [Int]) {
+        var temp = numbers
+        _merge(numbers: &numbers, tempNumbers: &temp, starIndex: 0, endIndex: numbers.count - 1)
+    }
 
+    static func _merge(numbers: inout [Int], tempNumbers: inout [Int], starIndex: Int, endIndex: Int) {
+        if starIndex >= endIndex {
+            return
+        }
+        let centerIndex = starIndex + (endIndex - starIndex)/2
+        _merge(numbers: &numbers, tempNumbers: &tempNumbers, starIndex: starIndex, endIndex: centerIndex)
+        _merge(numbers: &numbers, tempNumbers: &tempNumbers, starIndex: centerIndex + 1, endIndex: endIndex)
 
+        //开始排序
+        // start-center center+1-end
+        tempNumbers[starIndex...endIndex] = numbers[starIndex...endIndex]
+        var leftIndex = starIndex
+        var rightIndex = centerIndex + 1
+        var currentIndex = starIndex
+        while leftIndex <= centerIndex && rightIndex <= endIndex {
+            if tempNumbers[leftIndex] < tempNumbers[rightIndex] {
+                numbers[currentIndex] = tempNumbers[leftIndex]
+                leftIndex += 1
+                currentIndex += 1
+            }else {
+                numbers[currentIndex] = tempNumbers[rightIndex]
+                rightIndex += 1
+                currentIndex += 1
+            }
+        }
+        if leftIndex <= centerIndex {
+            numbers[currentIndex...endIndex] = tempNumbers[leftIndex...centerIndex]
+        }
+        //左边的元素已经遍历完，右边的元素已经在其位置属于排序好的状态，所以下面代码不需要添加
+//        if rightIndex <= endIndex {
+//            numbers[currentIndex...endIndex] = tempNumbers[rightIndex...endIndex]
+//        }
+    }
 
 
 

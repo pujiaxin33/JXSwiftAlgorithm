@@ -162,6 +162,37 @@ class SortMaster {
         if start >= end {
             return
         }
+
+        /*
+        //单轴双向扫描，两端扫描swap
+        //i 与 j 必须交错，如果两者相遇之后就停止比较，那相遇点所在的元素就没有和中心点进行比较。
+        let baseNumber = numbers[start]
+        var i = start + 1
+        var j = end
+        while i < j {
+            //从左往右扫描找到第一个大于基准值的数
+            while i <= j && numbers[i] < baseNumber {
+                i += 1
+            }
+            //从右往左扫描找到第一个小于基准值的数
+            while i <= j && numbers[j] >= baseNumber {
+                j -= 1
+            }
+            if i < j {
+                numbers.swapAt(i, j)
+                i += 1
+                j -= 1
+            }
+        }
+        if j != start {
+            numbers.swapAt(j, start)
+        }
+        quick(numbers: &numbers, start: start, end: j - 1)
+        quick(numbers: &numbers, start: j + 1, end: end)
+        */
+
+        /*
+        //单轴赋值填充，一端挖坑一端扫描
         let baseNumber = numbers[(start+end)/2]
         numbers.swapAt(start, (start+end)/2)
         var leftIndex = start
@@ -187,15 +218,38 @@ class SortMaster {
             }
         }
 
-
         quick(numbers: &numbers, start: start, end: leftIndex - 1)
         quick(numbers: &numbers, start: rightIndex + 1, end: end)
+        */
+
+        /*
+        //单轴单向扫描
+        //循环处理，一个遍历index，一个当前index，两个index搭配使用解决问题
+        let baseNumber = numbers[end]
+        var currentIndex = start
+        for i in start...end {
+            if numbers[i] < baseNumber {
+                if i != currentIndex {
+                    numbers.swapAt(i, currentIndex)
+                    currentIndex += 1
+                }
+            }
+        }
+        if end != currentIndex {
+            //将基准值移动到准确位置
+            numbers.swapAt(currentIndex, end)
+        }
+
+        quick(numbers: &numbers, start: start, end: currentIndex - 1)
+        quick(numbers: &numbers, start: currentIndex + 1, end: end)
+ */
     }
 
 
     /// 归并排序
     /// 首先递归拆分数组，直至长度为1。然后依次合并数组为有顺数据，最终整个数组合并有序
     /// 时间复杂度：O(nlogn)
+    /// 当某一个步骤需要不断循环重复的时候，就是递归的用武之地。需要封装好待重复调用的函数，然后再合适的地方递归调用自己
     static func merge() {
         var numbers = [3, 5, 1, 0, 9, 7, 8, 6, 4, 2]
         _merge(numbers: &numbers)

@@ -20,6 +20,8 @@
 		1996BDA92193D74F00F50E0C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1996BDA82193D74F00F50E0C /* Assets.xcassets */; };
 		1996BDAC2193D74F00F50E0C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1996BDAA2193D74F00F50E0C /* LaunchScreen.storyboard */; };
 		1996BDB52193D9FC00F50E0C /* AlgorithmMaster.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1996BDB42193D9FC00F50E0C /* AlgorithmMaster.swift */; };
+		199FC9CB2243579E00C6CF0E /* BinaryTreeMaster.swift in Sources */ = {isa = PBXBuildFile; fileRef = 199FC9CA2243579E00C6CF0E /* BinaryTreeMaster.swift */; };
+		199FC9CD2243617B00C6CF0E /* BinarySortTreeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 199FC9CC2243617B00C6CF0E /* BinarySortTreeViewController.swift */; };
 		19BA2FD621A3FB2D00170A41 /* SortMaster.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19BA2FD521A3FB2D00170A41 /* SortMaster.swift */; };
 /* End PBXBuildFile section */
 
@@ -39,6 +41,8 @@
 		1996BDAB2193D74F00F50E0C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1996BDAD2193D74F00F50E0C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1996BDB42193D9FC00F50E0C /* AlgorithmMaster.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlgorithmMaster.swift; sourceTree = "<group>"; };
+		199FC9CA2243579E00C6CF0E /* BinaryTreeMaster.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BinaryTreeMaster.swift; sourceTree = "<group>"; };
+		199FC9CC2243617B00C6CF0E /* BinarySortTreeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BinarySortTreeViewController.swift; sourceTree = "<group>"; };
 		19BA2FD521A3FB2D00170A41 /* SortMaster.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SortMaster.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -58,6 +62,7 @@
 			children = (
 				1996BDB42193D9FC00F50E0C /* AlgorithmMaster.swift */,
 				19BA2FD521A3FB2D00170A41 /* SortMaster.swift */,
+				199FC9CA2243579E00C6CF0E /* BinaryTreeMaster.swift */,
 				19753CD32232096600648414 /* SearchMaster.swift */,
 				19753CD7223209E600648414 /* TopicMaster.swift */,
 			);
@@ -70,6 +75,7 @@
 				1996BDA32193D74E00F50E0C /* ViewController.swift */,
 				19753CD12232067F00648414 /* BaseTableViewController.swift */,
 				19753CCA2232004D00648414 /* SortViewController.swift */,
+				199FC9CC2243617B00C6CF0E /* BinarySortTreeViewController.swift */,
 				19753CCC2232005900648414 /* SearchViewController.swift */,
 				19753CD5223209D500648414 /* TopicViewController.swift */,
 			);
@@ -192,10 +198,12 @@
 				1996BDA42193D74E00F50E0C /* ViewController.swift in Sources */,
 				19753CD42232096600648414 /* SearchMaster.swift in Sources */,
 				19753CD8223209E600648414 /* TopicMaster.swift in Sources */,
+				199FC9CB2243579E00C6CF0E /* BinaryTreeMaster.swift in Sources */,
 				1996BDA22193D74E00F50E0C /* AppDelegate.swift in Sources */,
 				1996BDB52193D9FC00F50E0C /* AlgorithmMaster.swift in Sources */,
 				19BA2FD621A3FB2D00170A41 /* SortMaster.swift in Sources */,
 				19753CD6223209D500648414 /* TopicViewController.swift in Sources */,
+				199FC9CD2243617B00C6CF0E /* BinarySortTreeViewController.swift in Sources */,
 				19753CD02232025E00648414 /* JXSwiftAlgorithmDefines.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -25,6 +25,14 @@ enum AlgorithmSortType: AlgorithmType {
     case merge                  //归并
 }
 
+enum AlgorithmBinarySortTreeType: AlgorithmType {
+    case search                 //查找
+    case searchNodeAtIndex      //根据index按层次查找node
+    case preIterate             //先序遍历
+    case middleIterate          //中序遍历
+    case lastIterate            //后序遍历
+}
+
 enum AlgorithmSearchType: AlgorithmType {
     case binaryRecursive         //二分递归查找
     case binaryIterative         //二分迭代查找

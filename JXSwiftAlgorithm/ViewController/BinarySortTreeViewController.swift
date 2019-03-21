@@ -19,7 +19,8 @@ class BinarySortTreeViewController: BaseTableViewController {
             AlgorithmCellModel(name: "查找目标index的node", type: .searchNodeAtIndex),
             AlgorithmCellModel(name: "先序遍历", type: .preIterate),
             AlgorithmCellModel(name: "中序遍历", type: .middleIterate),
-            AlgorithmCellModel(name: "后序遍历", type: .lastIterate)
+            AlgorithmCellModel(name: "后序遍历", type: .lastIterate),
+            AlgorithmCellModel(name: "反转二叉树", type: .reverseTree),
         ]
     }
 
@@ -53,6 +54,8 @@ class BinarySortTreeViewController: BaseTableViewController {
             BinaryTreeMaster.lastIterateTree(node: rootNode) { (node) in
                 print(node.value)
             }
+        case .reverseTree:
+            BinaryTreeMaster.reverseTree(node: rootNode)
         }
     }
 }

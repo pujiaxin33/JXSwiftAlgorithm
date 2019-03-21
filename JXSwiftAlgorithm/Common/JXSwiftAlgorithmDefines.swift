@@ -31,6 +31,7 @@ enum AlgorithmBinarySortTreeType: AlgorithmType {
     case preIterate             //先序遍历
     case middleIterate          //中序遍历
     case lastIterate            //后序遍历
+    case reverseTree            //反转二叉树
 }
 
 enum AlgorithmSearchType: AlgorithmType {

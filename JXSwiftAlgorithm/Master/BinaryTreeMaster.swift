@@ -128,4 +128,17 @@ class BinaryTreeMaster {
         lastIterateTree(node: node?.rightChildNode, handler: handler)
         handler?(node!)
     }
+
+    /// 反转二叉树
+    static func reverseTree(node: TreeNode?) {
+        guard node != nil else {
+            return
+        }
+
+        let tempNode = node?.leftChildNode
+        node?.leftChildNode = node?.rightChildNode
+        node?.rightChildNode = tempNode
+        reverseTree(node: node?.leftChildNode)
+        reverseTree(node: node?.rightChildNode)
+    }
 }

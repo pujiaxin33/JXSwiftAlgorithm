@@ -35,9 +35,10 @@ enum AlgorithmBinarySortTreeType: AlgorithmType {
 }
 
 enum AlgorithmSearchType: AlgorithmType {
-    case binaryRecursive         //二分递归查找
-    case binaryIterative         //二分迭代查找
-    case twoDimensionArray       //二维数组查找
+    case binaryRecursive            //二分递归查找
+    case binaryIterative            //二分迭代查找
+    case twoDimensionArray          //二维数组查找
+    case rotateBinarySearch         //搜索旋转排序数组
 }
 
 enum AlgorithmTopicType: AlgorithmType {

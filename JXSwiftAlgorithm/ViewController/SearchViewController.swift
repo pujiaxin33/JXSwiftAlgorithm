@@ -18,6 +18,7 @@ class SearchViewController: BaseTableViewController {
             AlgorithmCellModel(name: "二分递归查找", type: .binaryRecursive),
             AlgorithmCellModel(name: "二分迭代查找", type: .binaryIterative),
             AlgorithmCellModel(name: "二维数组查找", type: .twoDimensionArray),
+            AlgorithmCellModel(name: "搜索旋转排序数组", type: .rotateBinarySearch)
         ]
     }
 
@@ -39,6 +40,11 @@ class SearchViewController: BaseTableViewController {
             SearchMaster.binarySearchIterative()
         case .twoDimensionArray:
             SearchMaster.twoDimensionArray()
+        case .rotateBinarySearch:
+//            let numbers = [4, 5, 6, 7, 8, 9, 0, 1, 2, 3]
+            let numbers = [3, 1]
+            let index = SearchMaster.rotateBinarySearch(nums: numbers, target: 1)
+            print(index)
         }
     }
 }

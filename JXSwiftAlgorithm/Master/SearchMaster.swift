@@ -10,6 +10,65 @@ import Foundation
 
 class SearchMaster {
 
+    static func firstBadVersion(n: Int) -> Int {
+        var start = 1
+        var end = n
+        while start < end {
+            let middle = (start + end)/2
+            if isBadVerison(n: middle) {
+                if !isBadVerison(n: middle - 1) {
+                    return middle
+                }else {
+                    end = middle
+                }
+            }else {
+                start = middle + 1
+            }
+        }
+        if start != n && isBadVerison(n: start) {
+            return start
+        }
+        return 1
+    }
+
+    private static func isBadVerison(n: Int) -> Bool {
+        if n >= 4 {
+            return true
+        }
+        return false
+    }
+
+    static func rotateBinarySearch(nums: [Int], target: Int) -> Int {
+        if nums.isEmpty {
+            return -1
+        }
+        var left = 0
+        var right = nums.count - 1
+        var middle = 0
+        while left <= right {
+            middle = (left + right)/2
+            if nums[middle] == target {
+                return middle
+            }
+            if nums[left] <= nums[middle] {
+                //前部分有序
+                if target <= nums[middle] && target >= nums[left] {
+                    right = middle - 1
+                }else {
+                    left = middle + 1
+                }
+            }else {
+                //后部分有序
+                if target >= nums[middle] && target <= nums[right] {
+                    left = middle + 1
+                }else {
+                    right = middle - 1
+                }
+            }
+        }
+        return -1
+    }
+
     static func binarySearchRecursive() {
         let sortedNumbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
         //        let numbers = [3, 5, 1, 0, 9, 7, 8, 6, 4, 2]

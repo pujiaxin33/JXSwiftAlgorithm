@@ -23,6 +23,7 @@
 		199FC9CB2243579E00C6CF0E /* BinaryTreeMaster.swift in Sources */ = {isa = PBXBuildFile; fileRef = 199FC9CA2243579E00C6CF0E /* BinaryTreeMaster.swift */; };
 		199FC9CD2243617B00C6CF0E /* BinarySortTreeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 199FC9CC2243617B00C6CF0E /* BinarySortTreeViewController.swift */; };
 		19BA2FD621A3FB2D00170A41 /* SortMaster.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19BA2FD521A3FB2D00170A41 /* SortMaster.swift */; };
+		19D4BC2A22E1B32600ACC1A4 /* LinkedListMaster.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19D4BC2922E1B32600ACC1A4 /* LinkedListMaster.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +45,7 @@
 		199FC9CA2243579E00C6CF0E /* BinaryTreeMaster.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BinaryTreeMaster.swift; sourceTree = "<group>"; };
 		199FC9CC2243617B00C6CF0E /* BinarySortTreeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BinarySortTreeViewController.swift; sourceTree = "<group>"; };
 		19BA2FD521A3FB2D00170A41 /* SortMaster.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SortMaster.swift; sourceTree = "<group>"; };
+		19D4BC2922E1B32600ACC1A4 /* LinkedListMaster.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkedListMaster.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +64,7 @@
 			children = (
 				1996BDB42193D9FC00F50E0C /* AlgorithmMaster.swift */,
 				19BA2FD521A3FB2D00170A41 /* SortMaster.swift */,
+				19D4BC2922E1B32600ACC1A4 /* LinkedListMaster.swift */,
 				199FC9CA2243579E00C6CF0E /* BinaryTreeMaster.swift */,
 				19753CD32232096600648414 /* SearchMaster.swift */,
 				19753CD7223209E600648414 /* TopicMaster.swift */,
@@ -204,6 +207,7 @@
 				19BA2FD621A3FB2D00170A41 /* SortMaster.swift in Sources */,
 				19753CD6223209D500648414 /* TopicViewController.swift in Sources */,
 				199FC9CD2243617B00C6CF0E /* BinarySortTreeViewController.swift in Sources */,
+				19D4BC2A22E1B32600ACC1A4 /* LinkedListMaster.swift in Sources */,
 				19753CD02232025E00648414 /* JXSwiftAlgorithmDefines.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

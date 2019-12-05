@@ -8,28 +8,16 @@
 
 import UIKit
 
-class TopicViewController: BaseTableViewController {
-    var dataSource = [AlgorithmCellModel<AlgorithmTopicType>]()
+class TopicViewController: BaseTableViewController<TopicAlgorithm> {
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        dataSource = [
-            AlgorithmCellModel(name: "整数二进制1的个数", type: .binaryOneCount),
-        ]
+        dataSource = [.binaryOneCount]
     }
 
-    override func preferredDataSourceCount() -> Int {
-        return dataSource.count
-    }
-
-    override func preferredItemName(at index: Int) -> String {
-        return dataSource[index].name!
-    }
-
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let cellModel = dataSource[indexPath.row]
-        switch cellModel.type! {
+    override func didSelectRow(with type: TopicAlgorithm) {
+        switch type {
         case .binaryOneCount:
             TopicMaster.binaryOneCount()
         }

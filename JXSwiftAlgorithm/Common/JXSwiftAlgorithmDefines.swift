@@ -9,40 +9,52 @@
 import Foundation
 
 protocol AlgorithmType {
+    var name: String { get }
 }
 
-struct AlgorithmCellModel<T: AlgorithmType> {
-    var name: String?
-    var type: T?
+enum SortAlgorithm: String, AlgorithmType {
+    case maopao = "冒泡排序"
+    case selection = "选择排序"
+    case insert = "插入排序"
+    case shellInsert = "希尔排序"
+    case quick = "快速排序"
+    case merge = "归并排序"
+
+    var name: String {
+        return self.rawValue
+    }
 }
 
-enum AlgorithmSortType: AlgorithmType {
-    case maopao                 //冒泡
-    case selection              //选择
-    case insert                 //插入
-    case shellInsert            //希尔排序
-    case quick                  //快速
-    case merge                  //归并
+enum BinaryTreeAlgorithm: String, AlgorithmType {
+    case search                 = "查找"
+    case searchNodeAtIndex      = "根据index按层次查找node"
+    case preIterate             = "先序遍历"
+    case middleIterate          = "中序遍历"
+    case lastIterate            = "后序遍历"
+    case reverseTree            = "反转二叉树"
+
+    var name: String {
+        return self.rawValue
+    }
 }
 
-enum AlgorithmBinarySortTreeType: AlgorithmType {
-    case search                 //查找
-    case searchNodeAtIndex      //根据index按层次查找node
-    case preIterate             //先序遍历
-    case middleIterate          //中序遍历
-    case lastIterate            //后序遍历
-    case reverseTree            //反转二叉树
+enum SearchAlgorithm: String, AlgorithmType {
+    case binaryRecursive            = "二分递归查找"
+    case binaryIterative            = "二分迭代查找"
+    case twoDimensionArray          = "二维数组查找"
+    case rotateBinarySearch         = "搜索旋转排序数组"
+
+    var name: String {
+        return self.rawValue
+    }
 }
 
-enum AlgorithmSearchType: AlgorithmType {
-    case binaryRecursive            //二分递归查找
-    case binaryIterative            //二分迭代查找
-    case twoDimensionArray          //二维数组查找
-    case rotateBinarySearch         //搜索旋转排序数组
-}
+enum TopicAlgorithm: String, AlgorithmType {
+    case binaryOneCount             = "整数二进制1的个数"
 
-enum AlgorithmTopicType: AlgorithmType {
-    case binaryOneCount          //输入一个整数，输出该数二进制表示中1的个数
+    var name: String {
+        return self.rawValue
+    }
 }
 
 

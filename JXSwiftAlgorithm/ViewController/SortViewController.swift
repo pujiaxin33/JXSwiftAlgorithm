@@ -8,33 +8,16 @@
 
 import UIKit
 
-class SortViewController: BaseTableViewController {
-    var dataSource = [AlgorithmCellModel<AlgorithmSortType>]()
+class SortViewController: BaseTableViewController<SortAlgorithm> {
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        dataSource = [
-            AlgorithmCellModel(name: "冒泡排序", type: .maopao),
-            AlgorithmCellModel(name: "选择排序", type: .selection),
-            AlgorithmCellModel(name: "插入排序", type: .insert),
-            AlgorithmCellModel(name: "希尔排序", type: .shellInsert),
-            AlgorithmCellModel(name: "快速排序", type: .quick),
-            AlgorithmCellModel(name: "归并排序", type: .merge),
-        ]
+        dataSource = [.maopao, .selection, .insert, .shellInsert, .quick, .merge]
     }
 
-    override func preferredDataSourceCount() -> Int {
-        return dataSource.count
-    }
-
-    override func preferredItemName(at index: Int) -> String {
-        return dataSource[index].name!
-    }
-
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let cellModel = dataSource[indexPath.row]
-        switch cellModel.type! {
+    override func didSelectRow(with type: SortAlgorithm) {
+        switch type {
         case .maopao:
             SortMaster.bubble()
         case .selection:

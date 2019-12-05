@@ -8,7 +8,8 @@
 
 import UIKit
 
-class BaseTableViewController: UITableViewController {
+class BaseTableViewController<Algorithm>: UITableViewController where Algorithm: AlgorithmType  {
+    var dataSource = [Algorithm]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -16,23 +17,23 @@ class BaseTableViewController: UITableViewController {
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
     }
 
-    func preferredDataSourceCount() -> Int {
-        return 0
-    }
-
-    func preferredItemName(at index: Int) -> String {
-        return "unknown"
+    func didSelectRow(with type: Algorithm) {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return preferredDataSourceCount()
+        return dataSource.count
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
         cell.accessoryType = .disclosureIndicator
-        cell.textLabel?.text = preferredItemName(at: indexPath.row)
+        cell.textLabel?.text = dataSource[indexPath.row].name
         return cell
+    }
+
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let type = dataSource[indexPath.row]
+        didSelectRow(with: type)
     }
 
 }

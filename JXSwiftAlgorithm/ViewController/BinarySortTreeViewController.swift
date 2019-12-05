@@ -8,34 +8,17 @@
 
 import UIKit
 
-class BinarySortTreeViewController: BaseTableViewController {
-    var dataSource = [AlgorithmCellModel<AlgorithmBinarySortTreeType>]()
+class BinarySortTreeViewController: BaseTableViewController<BinaryTreeAlgorithm> {
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        dataSource = [
-            AlgorithmCellModel(name: "查找某个元素", type: .search),
-            AlgorithmCellModel(name: "查找目标index的node", type: .searchNodeAtIndex),
-            AlgorithmCellModel(name: "先序遍历", type: .preIterate),
-            AlgorithmCellModel(name: "中序遍历", type: .middleIterate),
-            AlgorithmCellModel(name: "后序遍历", type: .lastIterate),
-            AlgorithmCellModel(name: "反转二叉树", type: .reverseTree),
-        ]
+        dataSource = [.search, .searchNodeAtIndex, .preIterate, .middleIterate, .lastIterate, .reverseTree]
     }
 
-    override func preferredDataSourceCount() -> Int {
-        return dataSource.count
-    }
-
-    override func preferredItemName(at index: Int) -> String {
-        return dataSource[index].name!
-    }
-
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let cellModel = dataSource[indexPath.row]
+    override func didSelectRow(with type: BinaryTreeAlgorithm) {
         let rootNode = BinaryTreeMaster.binarySortTree()
-        switch cellModel.type! {
+        switch type {
         case .search:
             let result = BinaryTreeMaster.search(tree: rootNode, target: 1)
             print(result)
@@ -58,4 +41,5 @@ class BinarySortTreeViewController: BaseTableViewController {
             BinaryTreeMaster.reverseTree(node: rootNode)
         }
     }
+
 }

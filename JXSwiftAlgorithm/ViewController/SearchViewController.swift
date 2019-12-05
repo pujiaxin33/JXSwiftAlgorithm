@@ -8,32 +8,16 @@
 
 import UIKit
 
-class SearchViewController: BaseTableViewController {
-    var dataSource = [AlgorithmCellModel<AlgorithmSearchType>]()
+class SearchViewController: BaseTableViewController<SearchAlgorithm> {
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        dataSource = [
-            AlgorithmCellModel(name: "二分递归查找", type: .binaryRecursive),
-            AlgorithmCellModel(name: "二分迭代查找", type: .binaryIterative),
-            AlgorithmCellModel(name: "二维数组查找", type: .twoDimensionArray),
-            AlgorithmCellModel(name: "搜索旋转排序数组", type: .rotateBinarySearch)
-        ]
+        dataSource = [.binaryRecursive, .binaryIterative, .twoDimensionArray, .rotateBinarySearch]
     }
 
-    override func preferredDataSourceCount() -> Int {
-        return dataSource.count
-    }
-
-    override func preferredItemName(at index: Int) -> String {
-        return dataSource[index].name!
-    }
-
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let cellModel = dataSource[indexPath.row]
-        
-        switch cellModel.type! {
+    override func didSelectRow(with type: SearchAlgorithm) {
+        switch type {
         case .binaryRecursive:
             SearchMaster.binarySearchRecursive()
         case .binaryIterative:

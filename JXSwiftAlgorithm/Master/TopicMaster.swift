@@ -14,16 +14,6 @@ class TopicMaster {
     static func binaryOneCount() {
         let number = 31
         var count = 0
-        /*
-         //直接操作输入的数字，如果是负数就会无限循环
-         while number != 0 {
-         let value = number & 0x01
-         if value == 1 {
-         count += 1
-         }
-         number = number >> 1
-         }
-         */
         var base: Int = 1
         while base != 0 {
             if number & base == 1 {

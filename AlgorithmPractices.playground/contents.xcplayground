@@ -3,6 +3,7 @@
     <pages>
         <page name='Sort'/>
         <page name='TraverseTree'/>
+        <page name='Search'/>
         <page name='BinaryTree'/>
     </pages>
 </playground>

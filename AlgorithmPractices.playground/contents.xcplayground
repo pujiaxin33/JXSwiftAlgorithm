@@ -6,5 +6,6 @@
         <page name='Search'/>
         <page name='BinaryTree'/>
         <page name='Simple'/>
+        <page name='Array'/>
     </pages>
 </playground>

@@ -8,5 +8,6 @@
         <page name='Simple'/>
         <page name='Array'/>
         <page name='map'/>
+        <page name='LinkedList'/>
     </pages>
 </playground>
